@@ -18,7 +18,10 @@ const App = () => {
   const router = createHashRouter(routes);
 
   return (
-    <div className="App">
+    <div className="
+    APP-CONTAINER
+    max-w-[69.375rem] mx-auto"
+    >
       <RouterProvider router={router} />
     </div>
   );
