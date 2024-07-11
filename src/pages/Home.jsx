@@ -1,9 +1,13 @@
+import WelcomeBanner from '../components/HomeComponents/WelcomeBanner';
+
 const Home = () => {
   console.log();
 
   return (
-    <div className="HOME-PAGE">
-      this is home page.
+    <div className="
+    HOME-PAGE"
+    >
+      <WelcomeBanner />
     </div>
   );
 };
