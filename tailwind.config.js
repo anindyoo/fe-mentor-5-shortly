@@ -22,6 +22,7 @@ module.exports = {
         neutralGrayishViolet: 'hsla(257, 7%, 63%, 1)',
         neutralVeryDarkBlue: 'hsla(255, 11%, 22%, 1)',
         neutralVeryDarkViolet: 'hsla(260, 8%, 14%, 1)',
+        neutralLightGray: 'hsla(230, 25%, 95%, 1)',
       },
       fontSize: {
         semiBase: '0.938rem',
