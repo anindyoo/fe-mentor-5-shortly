@@ -1,4 +1,5 @@
 import BenefitsBanner from '../components/HomeComponents/BenefitsBanner';
+import LinkShortener from '../components/HomeComponents/LinkShortener';
 import WelcomeBanner from '../components/HomeComponents/WelcomeBanner';
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
     HOME-PAGE"
     >
       <WelcomeBanner />
+      <LinkShortener />
       <BenefitsBanner />
     </div>
   );
