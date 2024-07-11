@@ -1,3 +1,4 @@
+import BenefitsBanner from '../components/HomeComponents/BenefitsBanner';
 import WelcomeBanner from '../components/HomeComponents/WelcomeBanner';
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
     HOME-PAGE"
     >
       <WelcomeBanner />
+      <BenefitsBanner />
     </div>
   );
 };
