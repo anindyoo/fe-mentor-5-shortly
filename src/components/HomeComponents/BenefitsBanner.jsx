@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import brandRecognitionIcon from '../../assets/icons/icon-brand-recognition.svg';
 import detailedRecordsIcon from '../../assets/icons/icon-detailed-records.svg';
 import fullyCustomizableIcon from '../../assets/icons/icon-fully-customizable.svg';
@@ -22,6 +23,15 @@ const benefitsData = [
     iconAlt: 'A flat icon of a bundle that consists of a highlighter marker, a fountain pen, & a pointed paint brush.',
   },
 ];
+
+const CardBuffer = () => (
+  <li className="
+    CARD-BUFFER
+    w-[1.875rem] h-2
+    bg-primaryCyan
+    mt-[9.5rem]"
+  />
+);
 
 const BenefitsBanner = () => {
   console.log();
@@ -59,38 +69,41 @@ const BenefitsBanner = () => {
         </div>
         <ul className="
         BENEFIT-CARDS-LIST
-        flex flex-row justify-between"
+        flex flex-row"
         >
           {benefitsData.map((benefit, index) => (
-            <li
-              key={benefit.title.replace(/ /g, '')}
-              className="
-              BENEFIT-CARD
-              relative
-              max-w-[21.875rem] h-fit
-              px-8 pb-9 pt-20
-              bg-white
-              rounded-md"
-              style={{
-                marginTop: `${index * 44}px`,
-              }}
-            >
-              <div className="
-              CARD-ICON-CONTAINER
-              absolute  -top-[2.75rem]
-              flex items-center justify-center
-              w-[5.5rem] h-[5.5rem]
-              rounded-full
-              bg-primaryDarkViolet"
+            <Fragment key={benefit.title.replace(/ /g, '')}>
+              {index === 1 && <CardBuffer />}
+              <li
+                className="
+                BENEFIT-CARD
+                relative
+                max-w-[21.875rem] h-fit
+                px-8 pb-9 pt-20
+                bg-white
+                rounded-md"
+                style={{
+                  marginTop: `${index * 44}px`,
+                }}
               >
-                <img
-                  src={benefit.icon}
-                  alt={benefit.iconAlt}
-                />
-              </div>
-              <h1 className="text-[1.375rem] text-neutralVeryDarkViolet font-bold">{benefit.title}</h1>
-              <p className="text-semiBase mt-5 leading-relaxed">{benefit.description}</p>
-            </li>
+                <div className="
+                CARD-ICON-CONTAINER
+                absolute  -top-[2.75rem]
+                flex items-center justify-center
+                w-[5.5rem] h-[5.5rem]
+                rounded-full
+                bg-primaryDarkViolet"
+                >
+                  <img
+                    src={benefit.icon}
+                    alt={benefit.iconAlt}
+                  />
+                </div>
+                <h1 className="text-[1.375rem] text-neutralVeryDarkViolet font-bold">{benefit.title}</h1>
+                <p className="text-semiBase mt-5 leading-relaxed">{benefit.description}</p>
+              </li>
+              {index === 1 && <CardBuffer />}
+            </Fragment>
           ))}
         </ul>
       </div>
