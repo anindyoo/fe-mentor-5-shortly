@@ -6,3 +6,7 @@
   font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
 }
+
+body {
+  @apply box-border bg-gray-800
+}
