@@ -7,16 +7,19 @@ const benefitsData = [
     title: 'Brand Recognition',
     description: 'Boost your brand recognition with each click. Generic links don\'t mean a thing. Branded links help instil confidence in your content.',
     icon: brandRecognitionIcon,
+    iconAlt: 'A flat icon of a four bar graph with dots that are connected with a line above it.',
   },
   {
     title: 'Detailed Records',
     description: 'Gain insights into who is clicking your links. Knowing when and where people with you content helps inform better decisions.',
     icon: detailedRecordsIcon,
+    iconAlt: 'A flat icon of a circular measuring device that resembles a speedometer.',
   },
   {
     title: 'Fully Customizable',
     description: 'Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.',
     icon: fullyCustomizableIcon,
+    iconAlt: 'A flat icon of a bundle that consists of a highlighter marker, a fountain pen, & a pointed paint brush.',
   },
 ];
 
@@ -82,7 +85,7 @@ const BenefitsBanner = () => {
               >
                 <img
                   src={benefit.icon}
-                  alt=""
+                  alt={benefit.iconAlt}
                 />
               </div>
               <h1 className="text-[1.375rem] text-neutralVeryDarkViolet font-bold">{benefit.title}</h1>
