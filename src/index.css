@@ -10,3 +10,7 @@
 body {
   @apply box-border bg-gray-800
 }
+
+.SECTION-CENTER {
+  @apply max-w-[69.375rem] mx-auto
+}
