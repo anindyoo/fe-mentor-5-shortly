@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="
     NAVBAR
-    border border-red-600
+    SECTION-CENTER
     flex flex-row justify-between items-center
     h-[8.5rem]
     text-semiBase font-bold text-neutralGrayishViolet"
