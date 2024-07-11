@@ -20,7 +20,7 @@ const App = () => {
   return (
     <div className="
     APP-CONTAINER
-    max-w-[69.375rem] mx-auto"
+    w-screen overflow-x-hidden"
     >
       <RouterProvider router={router} />
     </div>
