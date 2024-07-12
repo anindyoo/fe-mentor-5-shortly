@@ -8,9 +8,9 @@
 }
 
 body {
-  @apply box-border bg-gray-800 text-neutralGrayishViolet
+  @apply box-border text-neutralGrayishViolet
 }
 
 .SECTION-CENTER {
-  @apply max-w-[69.375rem] mx-auto
+  @apply w-[90%] lg:max-w-[69.375rem] mx-auto 
 }
