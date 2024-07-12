@@ -88,7 +88,7 @@ const BenefitsBanner = () => {
               >
                 <div className="
                 CARD-ICON-CONTAINER
-                absolute  -top-[2.75rem]
+                absolute -top-[2.75rem]
                 flex items-center justify-center
                 w-[5.5rem] h-[5.5rem]
                 rounded-full
