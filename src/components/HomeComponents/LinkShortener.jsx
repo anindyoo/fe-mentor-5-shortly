@@ -1,7 +1,23 @@
+import { useState } from 'react';
 import shortenBgDesktop from '../../assets/images/backgrounds/bg-shorten-desktop.svg';
 
 const LinkShortener = () => {
-  console.log();
+  const [linkInput, setLinkInput] = useState('');
+  const [isInputEmpty, setIsInputEmpty] = useState(false);
+
+  const handleLinkInputChange = (event) => {
+    setLinkInput(event.target.value);
+    setIsInputEmpty(false);
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    if (linkInput === '') {
+      setIsInputEmpty(true);
+    }
+    console.log(linkInput);
+  };
 
   return (
     <section
@@ -19,19 +35,35 @@ const LinkShortener = () => {
       }}
     >
       <form action="" className="flex gap-6 w-full">
-        <input
-          type="text"
-          placeholder="Shorten a link here..."
-          className="
-          LINK-SHORTENER-INPUT
-          flex w-full
-          h-16
-          px-8
-          rounded-lg
-          placeholder:text-xl placeholder:font-medium"
-        />
+        <label htmlFor="linkInput" className="w-full">
+          <input
+            type="text"
+            id="linkInput"
+            placeholder="Shorten a link here..."
+            onChange={handleLinkInputChange}
+            className={`
+            LINK-SHORTENER-INPUT
+            flex w-full
+            h-16
+            px-8
+            rounded-lg
+            text-xl font-medium text-neutralVeryDarkViolet
+            placeholder:text-neutralGrayishViolet
+            ${isInputEmpty && 'border-[0.188rem] border-secondaryRed'}`}
+          />
+          <div className={`
+          ERROR-INPUT-NOTIF
+          ${isInputEmpty ? 'visible' : 'hidden'}
+          h-0
+          relative top-2
+          text-base font-medium italic text-secondaryRed`}
+          >
+            Please add a link
+          </div>
+        </label>
         <button
           type="submit"
+          onClick={handleFormSubmit}
           className="
           SUBMIT-LINK-BUTTON
           w-fit
