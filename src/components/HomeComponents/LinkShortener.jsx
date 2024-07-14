@@ -1,22 +1,50 @@
 import { useState } from 'react';
+import axios from 'axios';
 import shortenBgDesktop from '../../assets/images/backgrounds/bg-shorten-desktop.svg';
 
 const LinkShortener = () => {
   const [linkInput, setLinkInput] = useState('');
-  const [isInputEmpty, setIsInputEmpty] = useState(false);
+  const [isInputError, setIsInputError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [shortenedLinks, setShortenedLinks] = useState([]);
 
   const handleLinkInputChange = (event) => {
     setLinkInput(event.target.value);
-    setIsInputEmpty(false);
+    setIsInputError(false);
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     if (linkInput === '') {
-      setIsInputEmpty(true);
+      return setIsInputError(true);
     }
-    console.log(linkInput);
+
+    const encodedLinkInput = encodeURIComponent(linkInput);
+
+    await axios
+      .get(`https://tinyurl.com/api-create.php?url=${encodedLinkInput}`)
+      .then((response) => {
+        const responseObject = {
+          longUrl: linkInput,
+          shortUrl: response.data,
+        };
+
+        setIsLoading(true);
+        setShortenedLinks([...shortenedLinks, responseObject]);
+        setIsInputError(false);
+
+        return true;
+      })
+      .catch((error) => {
+        setIsLoading(true);
+        setIsInputError(true);
+
+        return error;
+      })
+      .finally(() => setIsLoading(false));
+
+    return true;
   };
 
   return (
@@ -49,11 +77,11 @@ const LinkShortener = () => {
             rounded-lg
             text-xl font-medium text-neutralVeryDarkViolet
             placeholder:text-neutralGrayishViolet
-            ${isInputEmpty && 'border-[0.188rem] border-secondaryRed'}`}
+            ${isInputError && 'border-[0.188rem] border-secondaryRed'}`}
           />
           <div className={`
           ERROR-INPUT-NOTIF
-          ${isInputEmpty ? 'visible' : 'hidden'}
+          ${isInputError ? 'visible' : 'hidden'}
           h-0
           relative top-2
           text-base font-medium italic text-secondaryRed`}
@@ -66,13 +94,27 @@ const LinkShortener = () => {
           onClick={handleFormSubmit}
           className="
           SUBMIT-LINK-BUTTON
-          w-fit
-          px-10
+          flex flex-row gap-2 justify-center items-center
+          w-[11.75rem]
           rounded-lg
           text-xl font-bold text-white
           bg-primaryCyan"
         >
-          Submit
+          {isLoading ? (
+            <>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-5 stroke-[2] animate-spin"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+              </svg>
+              <span className="italic">Loading...</span>
+            </>
+          ) : 'Submit'}
         </button>
       </form>
     </section>
