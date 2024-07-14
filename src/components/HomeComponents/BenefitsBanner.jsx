@@ -39,8 +39,9 @@ const BenefitsBanner = () => {
   return (
     <section className="
     BENEFITS-BANNER
+    relative z-10
     bg-neutralLightGray
-    pt-[7.875rem] pb-[7.5rem]"
+    mt-[-2.625rem] pb-[7.5rem]"
     >
       <div className="
       BENEFITS-BANNER-CONTAINER
