@@ -18,11 +18,11 @@ const LinkShortenerForm = (props) => {
   };
 
   return (
-    <section
+    <div
       className="
-      LINK-SHORTENER
+      LINK-SHORTENER-FORM-CONTAINER
       SECTION-CENTER
-      relative top-[5.25rem]
+      relative -top-[5.25rem]
       flex items-center
       w-full
       px-16 py-[3.25rem]
@@ -40,21 +40,21 @@ const LinkShortenerForm = (props) => {
             placeholder="Shorten a link here..."
             onChange={handleOnchange}
             className={`
-            LINK-SHORTENER-INPUT
-            flex w-full
-            h-16
-            px-8
-            rounded-lg
-            text-xl font-medium text-neutralVeryDarkViolet
-            placeholder:text-neutralGrayishViolet
-            ${isInputError && 'border-[0.188rem] border-secondaryRed'}`}
+              LINK-SHORTENER-INPUT
+              flex w-full
+              h-16
+              px-8
+              rounded-lg
+              text-xl font-medium text-neutralVeryDarkViolet
+              placeholder:text-neutralGrayishViolet
+              ${isInputError && 'border-[0.188rem] border-secondaryRed'}`}
           />
           <div className={`
-          ERROR-INPUT-NOTIF
-          ${isInputError ? 'visible' : 'hidden'}
-          h-0
-          relative top-2
-          text-base font-medium italic text-secondaryRed`}
+            ERROR-INPUT-NOTIF
+            ${isInputError ? 'visible' : 'hidden'}
+            h-0
+            relative top-2
+            text-base font-medium italic text-secondaryRed`}
           >
             Please add a link
           </div>
@@ -63,12 +63,12 @@ const LinkShortenerForm = (props) => {
           type="submit"
           onClick={handleSubmit}
           className="
-          SUBMIT-LINK-BUTTON
-          flex flex-row gap-2 justify-center items-center
-          w-[11.75rem]
-          rounded-lg
-          text-xl font-bold text-white
-          bg-primaryCyan"
+            SUBMIT-LINK-BUTTON
+            flex flex-row gap-2 justify-center items-center
+            w-[11.75rem]
+            rounded-lg
+            text-xl font-bold text-white
+            bg-primaryCyan"
         >
           {isLoading ? (
             <>
@@ -87,7 +87,7 @@ const LinkShortenerForm = (props) => {
           ) : 'Submit'}
         </button>
       </form>
-    </section>
+    </div>
   );
 };
 
