@@ -24,7 +24,7 @@ const WelcomeBanner = () => {
         </h1>
         <h2 className="
         SUB-HEADLINE
-        text-[1.375rem] text-neutralGrayishViolet"
+        text-[1.375rem] font-medium text-neutralGrayishViolet"
         >
           Build your brand&#39;s recognition and get detailed insights on how your links
           are performing.
