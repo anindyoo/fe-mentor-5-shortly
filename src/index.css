@@ -12,5 +12,5 @@ body {
 }
 
 .SECTION-CENTER {
-  @apply md:w-[90%] max-w-[21.063rem] md:max-w-[69.375rem] mx-auto 
+  @apply w-[80%] 3xs:w-[90%] max-w-[21.063rem] md:max-w-[69.375rem] mx-auto 
 }
