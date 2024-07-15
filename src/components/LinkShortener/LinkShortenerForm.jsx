@@ -22,17 +22,22 @@ const LinkShortenerForm = (props) => {
       className="
       LINK-SHORTENER-FORM-CONTAINER
       SECTION-CENTER
-      relative -top-[5.25rem]
+      relative -top-20 md:-top-14 lg:-top-[5.25rem]
       flex items-center
       w-full
-      px-16 py-[3.25rem]
+      p-6 lg:px-16 lg:py-[3.25rem]
       rounded-lg
       bg-primaryDarkViolet"
       style={{
         backgroundImage: `url(${shortenBgDesktop})`,
       }}
     >
-      <form action="" className="flex gap-6 w-full">
+      <form
+        action=""
+        className="
+        LINK-SHORTENER-FORM
+        flex flex-col md:flex-row gap-4 w-full"
+      >
         <label htmlFor="linkInput" className="w-full">
           <input
             type="text"
@@ -42,19 +47,20 @@ const LinkShortenerForm = (props) => {
             className={`
               LINK-SHORTENER-INPUT
               flex w-full
-              h-16
-              px-8
+              h-12 md:h-16
+              px-4 md:px-8
               rounded-lg
-              text-xl font-medium text-neutralVeryDarkViolet
+              text-base md:text-xl font-medium text-neutralVeryDarkViolet
               placeholder:text-neutralGrayishViolet
               ${isInputError && 'border-[0.188rem] border-secondaryRed'}`}
           />
           <div className={`
             ERROR-INPUT-NOTIF
             ${isInputError ? 'visible' : 'hidden'}
-            h-0
+            lg:h-0
             relative top-2
-            text-base font-medium italic text-secondaryRed`}
+            text-[0.75rem] md:text-base font-medium italic text-secondaryRed
+            mb-1 md:mb-0`}
           >
             Please add a link
           </div>
@@ -65,9 +71,10 @@ const LinkShortenerForm = (props) => {
           className="
             SUBMIT-LINK-BUTTON
             flex flex-row gap-2 justify-center items-center
-            w-[11.75rem]
+            md:w-[11.75rem]
+            h-12 md:h-16
             rounded-lg
-            text-xl font-bold text-white
+            text-lg md:text-xl font-bold text-white
             bg-primaryCyan"
         >
           {isLoading ? (
