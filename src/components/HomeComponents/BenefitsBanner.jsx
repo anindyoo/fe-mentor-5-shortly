@@ -6,7 +6,7 @@ import fullyCustomizableIcon from '../../assets/icons/icon-fully-customizable.sv
 const benefitsData = [
   {
     title: 'Brand Recognition',
-    description: 'Boost your brand recognition with each click. Generic links don\'t mean a thing. Branded links help instil confidence in your content.',
+    description: 'Boost your brand recognition with each click. Generic links don\'t mean a thing. Branded links help instill confidence in your content.',
     icon: brandRecognitionIcon,
     iconAlt: 'A flat icon of a four bar graph with dots that are connected with a line above it.',
   },
@@ -65,7 +65,7 @@ const BenefitsBanner = () => {
           text-lg"
           >
             Track how your links are performing across the web with our advanced
-            statistics dashboard
+            statistics dashboard.
           </h2>
         </div>
         <ul className="
