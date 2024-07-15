@@ -91,7 +91,7 @@ const LinkShortenerForm = (props) => {
               </svg>
               <span className="italic">Loading...</span>
             </>
-          ) : 'Submit'}
+          ) : 'Shorten it!'}
         </button>
       </form>
     </div>
