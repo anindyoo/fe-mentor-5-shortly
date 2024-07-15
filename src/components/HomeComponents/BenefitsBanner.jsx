@@ -2,6 +2,8 @@ import { Fragment } from 'react';
 import brandRecognitionIcon from '../../assets/icons/icon-brand-recognition.svg';
 import detailedRecordsIcon from '../../assets/icons/icon-detailed-records.svg';
 import fullyCustomizableIcon from '../../assets/icons/icon-fully-customizable.svg';
+import useScreenSize from '../../hooks/useScreenSize';
+import config from '../../config/config';
 
 const benefitsData = [
   {
@@ -27,26 +29,30 @@ const benefitsData = [
 const CardBuffer = () => (
   <li className="
     CARD-BUFFER
-    w-[1.875rem] h-2
+    w-2 lg:w-[1.875rem] h-14 lg:h-2
     bg-primaryCyan
-    mt-[9.5rem]"
+    lg:mt-[9.5rem]"
   />
 );
 
 const BenefitsBanner = () => {
-  console.log();
+  const screenSize = useScreenSize();
+  const screenWidth = screenSize.width;
+
+  const breakpoints = config.screenBreakpoints;
 
   return (
     <section className="
     BENEFITS-BANNER
     relative z-10
     bg-neutralLightGray
-    mt-[-2.625rem] pb-[7.5rem]"
+    lg:mt-[-2.625rem]
+    pt-2.5 pb-20 lg:pb-[7.5rem]"
     >
       <div className="
       BENEFITS-BANNER-CONTAINER
       SECTION-CENTER
-      flex flex-col gap-[6.5rem]"
+      flex flex-col gap-[3.125rem] lg:gap-[6.5rem]"
       >
         <div className="
         BENEFITS-BANNER-DESCRIPTION
@@ -56,7 +62,8 @@ const BenefitsBanner = () => {
         >
           <h1 className="
           BENEFITS-BANNER-TITLE
-          text-[2.375rem] font-bold text-neutralVeryDarkBlue"
+          text-[1.75rem] md:text-[2rem] lg:text-[2.375rem] font-bold text-neutralVeryDarkBlue
+          tracking-[-0.03em] md:tracking-normal"
           >
             Advanced Statistics
           </h1>
@@ -70,7 +77,7 @@ const BenefitsBanner = () => {
         </div>
         <ul className="
         BENEFIT-CARDS-LIST
-        flex flex-row"
+        flex flex-col lg:flex-row items-center lg:items-start"
         >
           {benefitsData.map((benefit, index) => (
             <Fragment key={benefit.title.replace(/ /g, '')}>
@@ -79,12 +86,13 @@ const BenefitsBanner = () => {
                 className="
                 BENEFIT-CARD
                 relative
+                flex flex-col items-center lg:items-start
                 max-w-[21.875rem] h-fit
-                px-8 pb-9 pt-20
+                px-9 lg:px-8 pb-[2.625rem] lg:pb-9 pt-20
                 bg-white
                 rounded-md"
                 style={{
-                  marginTop: `${index * 44}px`,
+                  marginTop: screenWidth >= breakpoints.laptop ? `${index * 44}px` : '44px',
                 }}
               >
                 <div className="
@@ -101,7 +109,7 @@ const BenefitsBanner = () => {
                   />
                 </div>
                 <h1 className="text-[1.375rem] text-neutralVeryDarkViolet font-bold">{benefit.title}</h1>
-                <p className="text-semiBase mt-5 leading-relaxed">{benefit.description}</p>
+                <p className="text-semiBase mt-5 leading-[1.533em] lg:leading-relaxed text-center lg:text-left">{benefit.description}</p>
               </li>
               {index === 1 && <CardBuffer />}
             </Fragment>
