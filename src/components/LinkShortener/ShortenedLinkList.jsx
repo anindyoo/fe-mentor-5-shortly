@@ -1,10 +1,15 @@
+import { useState } from 'react';
+
 const ShortenedLinkList = (props) => {
   const {
     shortenedLinkData,
   } = props;
 
+  const [isCopied, setIsCopied] = useState(false);
+
   const handleCopyButton = () => {
     navigator.clipboard.writeText(shortenedLinkData.shortUrl);
+    setIsCopied(true);
   };
 
   return (
@@ -28,22 +33,22 @@ const ShortenedLinkList = (props) => {
       >
         <a
           href={shortenedLinkData.shortUrl}
-          className="text-lg font-normal text-primaryCyan"
+          className="text-lg font-medium text-primaryCyan"
         >
           {shortenedLinkData.shortUrl}
         </a>
         <button
           type="button"
           onClick={handleCopyButton}
-          className="
+          className={`
           COPY-SHORT-URL-BUTTON
           h-10
-          px-8
+          w-[6.5rem]
           rounded-md
           text-semiBase font-bold text-white
-          bg-primaryCyan"
+          ${isCopied ? 'bg-primaryDarkViolet' : 'bg-primaryCyan'}`}
         >
-          Copy
+          {isCopied ? 'Copied!' : 'Copy'}
         </button>
       </div>
     </li>
