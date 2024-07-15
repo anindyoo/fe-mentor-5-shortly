@@ -3,6 +3,10 @@ const ShortenedLinkList = (props) => {
     shortenedLinkData,
   } = props;
 
+  const handleCopyButton = () => {
+    navigator.clipboard.writeText(shortenedLinkData.shortUrl);
+  };
+
   return (
     <li className="
     SHORTLINK-LIST-ITEM
@@ -30,6 +34,7 @@ const ShortenedLinkList = (props) => {
         </a>
         <button
           type="button"
+          onClick={handleCopyButton}
           className="
           COPY-SHORT-URL-BUTTON
           h-10
