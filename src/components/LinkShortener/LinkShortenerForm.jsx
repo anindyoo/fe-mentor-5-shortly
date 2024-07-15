@@ -1,4 +1,7 @@
 import shortenBgDesktop from '../../assets/images/backgrounds/bg-shorten-desktop.svg';
+import shortenBgMobile from '../../assets/images/backgrounds/bg-shorten-mobile.svg';
+import config from '../../config/config';
+import useScreenSize from '../../hooks/useScreenSize';
 
 const LinkShortenerForm = (props) => {
   const {
@@ -7,6 +10,10 @@ const LinkShortenerForm = (props) => {
     isInputError,
     isLoading,
   } = props;
+
+  const screenSize = useScreenSize();
+  const screenWidth = screenSize.width;
+  const breakpoints = config.screenBreakpoints;
 
   const handleOnchange = (event) => {
     handleLinkInputChange(event.target.value);
@@ -27,9 +34,9 @@ const LinkShortenerForm = (props) => {
       w-full
       p-6 lg:px-16 lg:py-[3.25rem]
       rounded-lg
-      bg-primaryDarkViolet"
+      bg-no-repeat bg-right-top bg-primaryDarkViolet"
       style={{
-        backgroundImage: `url(${shortenBgDesktop})`,
+        backgroundImage: `url(${screenWidth >= breakpoints.tablet ? shortenBgDesktop : shortenBgMobile})`,
       }}
     >
       <form
