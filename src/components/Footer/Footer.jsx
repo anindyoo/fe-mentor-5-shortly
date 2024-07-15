@@ -59,9 +59,10 @@ const Footer = () => {
         BOOST-BANNER-CONTENT
         SECTION-CENTER
         flex flex-col gap-7 justify-center items-center
-        h-[15.625rem]"
+        h-[18.75rem] lg:h-[15.625rem]
+        text-center"
         >
-          <span className="text-[2.5rem] font-bold tracking-[-0.03em] text-white">Boost your links today</span>
+          <span className="text-[1.75rem] lg:text-[2.5rem] font-bold tracking-[-0.03em] text-white">Boost your links today</span>
           <button
             type="button"
             className="
