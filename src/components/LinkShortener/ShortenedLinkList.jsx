@@ -3,8 +3,6 @@ const ShortenedLinkList = (props) => {
     shortenedLinkData,
   } = props;
 
-  console.log(shortenedLinkData);
-
   return (
     <li className="
     SHORTLINK-LIST-ITEM
