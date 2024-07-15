@@ -18,7 +18,7 @@ const Navbar = () => {
       NAVBAR-CONTAINER
       SECTION-CENTER
       flex flex-row justify-between items-center
-      h-[8.5rem]"
+      h-[7.063rem] lg:h-[8.5rem]"
       >
         <div className="
         NAV-LINKS
@@ -31,7 +31,7 @@ const Navbar = () => {
           </Link>
           <ul className="
           NAV-LINKS-LIST
-          flex flex-row gap-[1.875rem]"
+          hidden lg:flex flex-row gap-[1.875rem]"
           >
             {navLinks.map((navLink) => (
               <li key={navLink}>
@@ -46,7 +46,7 @@ const Navbar = () => {
         </div>
         <div className="
         NAV-AUTH
-        flex flex-row gap-9"
+        hidden lg:flex flex-row gap-9"
         >
           <button
             type="button"
