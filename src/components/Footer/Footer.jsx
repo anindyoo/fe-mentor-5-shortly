@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
 import boostBgDesktop from '../../assets/images/backgrounds/bg-boost-desktop.svg';
+import boostBgMobile from '../../assets/images/backgrounds/bg-boost-mobile.svg';
 import logo from '../../assets/images/logo/logo.svg';
 import facebookIcon from '../../assets/icons/icon-facebook.svg';
 import twitterIcon from '../../assets/icons/icon-twitter.svg';
 import pinterestIcon from '../../assets/icons/icon-pinterest.svg';
 import instagramIcon from '../../assets/icons/icon-instagram.svg';
+import useScreenSize from '../../hooks/useScreenSize';
+import config from '../../config/config';
 
 const footerLinksData = {
   features: ['Link Shortening', 'Branded Links', 'Analytics'],
@@ -40,7 +43,9 @@ const socialLinksData = [
 ];
 
 const Footer = () => {
-  console.log();
+  const screenSize = useScreenSize();
+  const screenWidth = screenSize.width;
+  const breakpoints = config.screenBreakpoints;
 
   return (
     <div className="
@@ -50,9 +55,9 @@ const Footer = () => {
         className="
         BOOST-BANNER-CONTAINER
         bg-primaryDarkViolet
-        bg-no-repeat bg-center"
+        bg-no-repeat bg-center bg-cover"
         style={{
-          backgroundImage: `url(${boostBgDesktop})`,
+          backgroundImage: `url(${screenWidth >= breakpoints.tablet ? boostBgDesktop : boostBgMobile})`,
         }}
       >
         <div className="
