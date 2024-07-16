@@ -89,8 +89,10 @@ const Footer = () => {
         <div className="
         FOOTER-BANNER-CONTAINER
         SECTION-CENTER
-        flex flex-row justify-between
-        py-[4.375rem]"
+        flex flex-col md:flex-row justify-between
+        gap-[3.125rem] md:gap-0
+        items-center md:items-start
+        py-[3.438rem] md:py-[4.375rem]"
         >
           <Link to="/" className="w-fit h-fit">
             <div
@@ -105,19 +107,21 @@ const Footer = () => {
           </Link>
           <div className="
           FOOTER-LINKS
-          flex flex-row justify-between gap-8
-          w-fit"
+          flex flex-col lg:flex-row justify-between gap-12 lg:gap-8
+          w-fit
+          text-center md:text-left"
           >
             <div className="
             FOOTER-NAVLINKS-LIST
-            flex flex-row justify-between gap-10"
+            flex flex-col md:flex-row justify-between gap-[2.625rem] md:gap-10
+            items-center md:items-start"
             >
               {Object.keys(footerLinksData).map((footerLink) => (
                 <ul
                   key={`${footerLink}-navlinks`}
                   className={`
                   FOOTER-NAVLINKS-SUBLIST-${footerLink}
-                  flex flex-col gap-6
+                  flex flex-col gap-[1.625rem] md:gap-6
                   w-[9.375rem]`}
                 >
                   <div className="text-base tracking-[-0.01em] font-bold text-white">
