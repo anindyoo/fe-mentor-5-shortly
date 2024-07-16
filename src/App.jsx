@@ -15,7 +15,11 @@ const App = () => {
     },
   ];
 
-  const router = createBrowserRouter(routes);
+  const routeConfig = {
+    basename: '/frontend-mentor_5-url-shortening-api-challenge-solution',
+  };
+
+  const router = createBrowserRouter(routes, routeConfig);
 
   return (
     <div className="
