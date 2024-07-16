@@ -102,6 +102,7 @@ const Footer = () => {
               bg-white"
               style={{
                 mask: `url(${logo}) no-repeat`,
+                webkitMask: `url(${logo}) no-repeat`,
               }}
             />
           </Link>
