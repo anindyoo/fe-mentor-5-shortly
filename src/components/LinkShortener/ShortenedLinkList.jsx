@@ -40,6 +40,8 @@ const ShortenedLinkList = (props) => {
       >
         <a
           href={shortenedLinkData.shortUrl}
+          target="_blank"
+          rel="noreferrer"
           className="text-base lg:text-lg font-medium text-primaryCyan"
         >
           {shortenedLinkData.shortUrl}
