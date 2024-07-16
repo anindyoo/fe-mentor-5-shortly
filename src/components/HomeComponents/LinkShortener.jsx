@@ -65,8 +65,8 @@ const LinkShortener = () => {
         SECTION-CENTER
         flex flex-col gap-4
         relative -top-[5.375rem]
-        mt-6
-        pb-[4.625rem]"
+        mt-6 md:mt-14 lg:mt-6
+        lg:pb-[4.625rem]"
         >
           {shortenedLinks.map((shortenedLinkData) => (
             <ShortenedLinkList
