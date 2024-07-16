@@ -46,7 +46,7 @@ const BenefitsBanner = () => {
     BENEFITS-BANNER
     relative z-10
     bg-neutralLightGray
-    lg:mt-[-2.625rem]
+    mt-[-0.563rem] lg:mt-[-2.625rem]
     pt-2.5 pb-20 lg:pb-[7.5rem]"
     >
       <div className="
