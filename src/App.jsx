@@ -16,7 +16,7 @@ const App = () => {
   ];
 
   const routeConfig = {
-    basename: '/frontend-mentor_5-url-shortening-api-challenge-solution',
+    basename: '/fe-mentor-shortly',
   };
 
   const router = createBrowserRouter(routes, routeConfig);
