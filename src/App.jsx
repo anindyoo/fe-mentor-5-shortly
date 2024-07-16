@@ -16,7 +16,7 @@ const App = () => {
   ];
 
   const routeConfig = {
-    basename: '/fe-mentor-shortly',
+    basename: '/fe-mentor-5-shortly',
   };
 
   const router = createBrowserRouter(routes, routeConfig);
