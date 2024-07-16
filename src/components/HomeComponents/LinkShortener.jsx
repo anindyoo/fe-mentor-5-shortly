@@ -32,7 +32,6 @@ const LinkShortener = () => {
 
         setShortenedLinks([...shortenedLinks, responseObject]);
         setIsInputError(false);
-        console.log(response.data);
 
         return true;
       })
